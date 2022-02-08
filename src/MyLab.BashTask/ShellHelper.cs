@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics;
 using MyLab.Log.Dsl;
 
-namespace MyLab.ShellTask;
+namespace MyLab.BashTask;
 
 public static class ShellHelper
 {

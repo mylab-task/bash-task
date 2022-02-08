@@ -1,7 +1,7 @@
 ﻿using MyLab.Log.Dsl;
 using MyLab.TaskApp;
 
-namespace MyLab.ShellTask
+namespace MyLab.BashTask
 {
     public class ShellTaskLogic : ITaskLogic
     {

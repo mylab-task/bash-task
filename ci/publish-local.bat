@@ -1,1 +1,1 @@
-docker build -f ./Dockerfile -t ghcr.io/mylab-task/shell-task:local ../src
+docker build -f ./Dockerfile -t ghcr.io/mylab-task/bash-task:local ../src

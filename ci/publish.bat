@@ -3,13 +3,13 @@ echo off
 IF [%1]==[] goto noparam
 
 echo "Build image '%1' and 'latest'..."
-docker build --progress plain -f ./Dockerfile -t ghcr.io/mylab-task/shell-task:%1 -t ghcr.io/mylab-task/shell-task:latest ../src
+docker build --progress plain -f ./Dockerfile -t ghcr.io/mylab-task/bash-task:%1 -t ghcr.io/mylab-task/bash-task:latest ../src
 
 echo "Publish image '%1' ..."
-docker push ghcr.io/mylab-task/shell-task:%1
+docker push ghcr.io/mylab-task/bash-task:%1
 
 echo "Publish image 'latest' ..."
-docker push ghcr.io/mylab-task/shell-task:latest
+docker push ghcr.io/mylab-task/bash-task:latest
 
 goto done
 
