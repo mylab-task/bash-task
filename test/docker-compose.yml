@@ -1,0 +1,11 @@
+version: '3.3'
+
+services:
+  shell-task-test:
+    image: ghcr.io/mylab-task/shell-task:local
+    container_name: shell-task-test
+    volumes:
+    - ./test-script.sh:/script.sh
+    - ./output:/output
+    ports:
+    - 8084:80
