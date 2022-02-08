@@ -10,5 +10,9 @@
     <PackageReference Include="MyLab.Log.Dsl" Version="3.5.3" />
     <PackageReference Include="MyLab.TaskApp" Version="1.3.5" />
   </ItemGroup>
+	
+	<PropertyGroup>
+		<NoWarn>NU1605</NoWarn>
+	</PropertyGroup>
 
 </Project>

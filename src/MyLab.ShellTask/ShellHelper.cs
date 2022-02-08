@@ -29,14 +29,18 @@ public static class ShellHelper
                 var procError = process.StandardError.ReadToEnd();
                 var procOut = process.StandardOutput.ReadToEnd();
 
-                var logMsg = string.IsNullOrWhiteSpace(procError)
+                var logMsg = process.ExitCode != 0
                     ? logger.Error("Script execution error")
-                        .AndFactIs("stderr", procError)
                     : logger.Action("Script execution completed");
 
+                if (!string.IsNullOrWhiteSpace(procError))
+                    logMsg = logMsg.AndFactIs("stderr", procError);
+                if (!string.IsNullOrWhiteSpace(procOut))
+                    logMsg = logMsg.AndFactIs("stdout", procOut);
+
                 logMsg
-                    .AndFactIs("stdout", procOut)
                     .AndFactIs("exit-code", process.ExitCode)
+                    .AndLabel("script-execution")
                     .Write();
             }
 
